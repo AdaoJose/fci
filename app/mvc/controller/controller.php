@@ -24,5 +24,15 @@ class controller {
         echo '<br>Area de contato<br>';
         return TRUE;
     }
+    public function login()
+            {
+                $file = file(www.DS."app\mvc\\view\login.php");
+                foreach ($file as $arquivo)
+                    {
+                    str_replace($arquivo, "@logo" , "Logotipo da empresa");
+                        echo $arquivo;
+                    }
+                
+            }
 }
 //var_dump(property_exists('controller', 'contato'));   //true
