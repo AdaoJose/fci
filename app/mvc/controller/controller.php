@@ -1,6 +1,7 @@
 <?php
 
 namespace app\mvc\controller;
+use app\mvc\model;
 
 /**
  * Description of controller
@@ -19,6 +20,12 @@ class controller {
         $this->$url();
        
     }
+    public function home()
+            {
+                 echo '<h1>home</h1><br>';
+                
+                 
+            }
     public function contato()
     {
         echo '<br>Area de contato<br>';
