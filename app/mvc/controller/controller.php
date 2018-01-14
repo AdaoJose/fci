@@ -1,13 +1,14 @@
 <?php
 
 namespace app\mvc\controller;
-use app\mvc\model;
+use app\mvc\model as model;
 
 /**
  * Description of controller
  *
  * @author aristides01
  */
+new model\model();
 
 class controller {
     public  $contato;
@@ -23,6 +24,7 @@ class controller {
     public function home()
             {
                  echo '<h1>home</h1><br>';
+                 
                 
                  
             }
