@@ -19,15 +19,31 @@ class model {
 
     public function __construct() {
         $this->conn = new PDO('mysql:host=localhost;dbname=fci', "root", "root");
-       $data = $this->select('SELECT * FROM conta');
+       //$data = $this->select('SELECT * FROM conta');
        //var_dump($data);
-       $this->exibeir($data);
+       //$this->exibeir($data);
+       $this->insert();
     }
     public function select($sql)
     {
         $data = $this->conn->query($sql);
         return($data);
     }
+    public function insert()
+            {
+                
+                    $stmt = $this->conn->prepare("INSERT INTO conta VALUES(:idConta, :nomeConta, :descricaoConta, :nfConta, :localConta)");
+                    $stmt->execute(array(
+                      ':idConta' => 1,
+                      ':nomeConta' =>2,
+                      ':descricaoConta'=>'conta telefonica',
+                      ':nfConta'=>2129,
+                      ':localConta'=>'corona'
+                    ));
+
+                    echo $stmt->rowCount(); 
+            }
+
     public function exibeir($dados)
             {
                 if($dados!= FALSE)
@@ -52,4 +68,5 @@ class model {
                         echo 'verifique informações prestadas (PROG_SQL)'; 
                     }   
             }
+            
 }
