@@ -10,7 +10,11 @@ use app\mvc\view as view;
  * @author aristides01
  */
 
-new view\view("login");
+new view\view("login/teste", function($var,$var1){
+    echo"<br><br><h1>Ola Mundo</h1><br>";
+    echo $var;
+    echo "var1 = ".$var1."<br>";
+} );
 class controller {
     public  $contato;
     public function __construct($url) {
